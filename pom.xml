@@ -11,8 +11,8 @@
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
     <quarkus.platform.version>3.8.3</quarkus.platform.version>
-    <!-- 3.8.3 == java.lang.NoClassDefFoundError: -->
-    <!-- 3.8.2 == ok -->
+    <!-- 3.8.3+ == java.lang.NoClassDefFoundError: -->
+    <!-- 3.8.2- == ok -->
 
     <!-- karate -->
     <logback.version>1.5.3</logback.version>
@@ -72,6 +72,14 @@
       <version>${logback.version}</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- Graal SSK ? -->
+    <!--<dependency>
+      <groupId>org.graalvm.sdk</groupId>
+      <artifactId>graal-sdk</artifactId>
+      <version>22.3.3</version>
+    </dependency>-->
+
   </dependencies>
 
   <build>
