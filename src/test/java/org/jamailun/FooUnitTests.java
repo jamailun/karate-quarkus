@@ -10,6 +10,7 @@ public class FooUnitTests {
     @Karate.Test
     Karate testAllUnitTests() {
         return Karate.run()
+                .debugMode(true)
                 .tags("@foo")
                 .relativeTo(getClass());
     }

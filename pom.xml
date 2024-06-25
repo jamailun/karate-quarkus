@@ -10,12 +10,11 @@
     <!-- Quarkus -->
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-    <quarkus.platform.version>3.8.3</quarkus.platform.version>
-    <!-- 3.8.3+ == java.lang.NoClassDefFoundError: -->
     <!-- 3.8.2- == ok -->
+    <quarkus.platform.version>3.8.2</quarkus.platform.version>
+    <!-- 3.8.3+ == java.lang.NoClassDefFoundError: -->
 
     <!-- karate -->
-    <logback.version>1.5.3</logback.version>
     <karate.version>1.4.1</karate.version>
 
     <!-- compilation -->
@@ -66,19 +65,21 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>${logback.version}</version>
-      <scope>test</scope>
-    </dependency>
-
     <!-- Graal SSK ? -->
     <!--<dependency>
       <groupId>org.graalvm.sdk</groupId>
       <artifactId>graal-sdk</artifactId>
-      <version>22.3.3</version>
+      <version>23.0.4</version>
     </dependency>-->
+    <!-- 23.0.4- = not a subtype -->
+
+    <!-- Polyglot module of Graal-SDK -->
+    <!--<dependency>
+      <groupId>org.graalvm.polyglot</groupId>
+      <artifactId>polyglot</artifactId>
+      <version>24.0.1</version>
+    </dependency>-->
+    <!-- 23.1.0+ : scenario not found... -->
 
   </dependencies>
 

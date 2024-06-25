@@ -20,9 +20,11 @@ java.lang.NoClassDefFoundError: org/graalvm/polyglot/Value
         ...
 ```
 
-### Potential fixes
+## Potential fixes
 
-Adding Graal-SDK : 
+### 1) Adding Graal-SDK :
+
+We add the `graal-sdk` dependency.
 ```xml
 <dependency>
   <groupId>org.graalvm.sdk</groupId>
@@ -66,3 +68,22 @@ Which is weird, because the class `com.oracle.truffle.polyglot.PolyglotImpl` doe
 
 Link to [Truffle class](https://github.com/oracle/graal/blob/master/truffle/src/com.oracle.truffle.polyglot/src/com/oracle/truffle/polyglot/PolyglotImpl.java)
 source code.
+
+### Only adding the new polyglot module
+
+**Instead** of the previous fix, we add:
+```xml
+<dependency>
+    <groupId>org.graalvm.polyglot</groupId>
+    <artifactId>polyglot</artifactId>
+    <version>24.0.1</version>
+</dependency>
+```
+
+Now it compiles ! But karate won't find anything, even though the tests are the sames.
+
+```log
+org.opentest4j.AssertionFailedError: no features or scenarios found: [classpath:org/jamailun]
+        at com.intuit.karate.junit5.Karate.iterator(Karate.java:72)
+        ...
+```
