@@ -11,11 +11,13 @@
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
     <!-- 3.8.2- == ok -->
-    <quarkus.platform.version>3.8.2</quarkus.platform.version>
+<!--    <quarkus.platform.version>3.14.4</quarkus.platform.version>-->
+    <quarkus.platform.version>3.14.4</quarkus.platform.version>
     <!-- 3.8.3+ == java.lang.NoClassDefFoundError: -->
 
     <!-- karate -->
-    <karate.version>1.4.1</karate.version>
+    <karate.version>1.5.0</karate.version>
+<!--    <karate.version>1.4.1</karate.version>-->
 
     <!-- compilation -->
     <maven.compiler.parameters>true</maven.compiler.parameters>
@@ -59,7 +61,8 @@
 
     <!-- Karate -->
     <dependency>
-      <groupId>com.intuit.karate</groupId>
+      <groupId>io.karatelabs</groupId>
+<!--      <groupId>com.intuit.karate</groupId>-->
       <artifactId>karate-junit5</artifactId>
       <version>${karate.version}</version>
       <scope>test</scope>
@@ -74,11 +77,11 @@
     <!-- 23.0.4- = not a subtype -->
 
     <!-- Polyglot module of Graal-SDK -->
-    <!--<dependency>
-      <groupId>org.graalvm.polyglot</groupId>
-      <artifactId>polyglot</artifactId>
-      <version>24.0.1</version>
-    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>org.graalvm.polyglot</groupId>-->
+<!--      <artifactId>polyglot</artifactId>-->
+<!--      <version>24.1.0</version>-->
+<!--    </dependency>-->
     <!-- 23.1.0+ : scenario not found... -->
 
   </dependencies>

@@ -1,4 +1,4 @@
-function() {
+function _() {
     var env = karate.env; // get java system property 'karate.env'
 
     karate.log('karate.env selected environment was:', env);

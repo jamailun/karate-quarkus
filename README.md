@@ -6,9 +6,21 @@ The Quarkus PR [#39442](https://github.com/quarkusio/quarkus/pull/39442) exclude
 
 But reimporting it does not seem to work.
 
+# Update 20/09/2024
+
+Karate upgraded to `1.5.0`. With the latest version of Quarkus, the test still do not seem to work.
+
+Now, with Quarkus `3.14.4` we don't have any error, ... but the Karate tests are NOT performed.
+
+Again, it works well with Quarkus 3.8.2 + Karate 1.4.1, but not after.
+
+-----
+
+# Previous issue
+
 ## The issue
 
-Because the Graal SDK was excluded, Karates causes this issue :
+Because the Graal SDK was excluded, Karate causes this issue :
 ```log
 java.lang.NoClassDefFoundError: org/graalvm/polyglot/Value
         at com.intuit.karate.core.Variable.<init>(Variable.java:72)
