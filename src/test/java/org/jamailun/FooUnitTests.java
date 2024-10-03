@@ -2,25 +2,35 @@ package org.jamailun;
 
 import com.intuit.karate.junit5.Karate;
 import io.quarkus.test.junit.QuarkusTest;
-import org.junit.jupiter.api.Test;
+import org.reflections.Reflections;
+import org.reflections.scanners.ResourcesScanner;
+
+import java.util.*;
+import java.util.regex.Pattern;
 
 @QuarkusTest
 public class FooUnitTests {
 
+    public static String[] allFeaturesRelativeTo(Class<?> clazz) {
+        String packageName = clazz.getPackageName();
+        Reflections reflections = new Reflections(packageName, new ResourcesScanner());
+        Set<String> resourceList = reflections.getResources(Pattern.compile(".*\\.feature"));
+        String[] result = new String[resourceList.size()];
+        int i = 0;
+        for(String resource : resourceList) {
+            result[i++] = "classpath:" + resource;
+        }
+        System.out.println("Classpaths = " + Arrays.toString(result));
+        return result;
+    }
+
     @Karate.Test
     Karate testAllUnitTests() {
-        return Karate.run()
-            .debugMode(true)
-            .relativeTo(getClass());
+        return Karate.run(allFeaturesRelativeTo(getClass()))
+            .tags("@foo");
 //        return Karate.run()
-//                .debugMode(true)
 //                .tags("@foo")
 //                .relativeTo(getClass());
     }
-
-//    @Test
-//    void a() {
-//        System.out.println("ok");
-//    }
 
 }

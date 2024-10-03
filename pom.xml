@@ -11,7 +11,7 @@
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
     <!-- 3.8.2- == ok -->
-<!--    <quarkus.platform.version>3.14.4</quarkus.platform.version>-->
+<!--    <quarkus.platform.version>3.8.2</quarkus.platform.version>-->
     <quarkus.platform.version>3.14.4</quarkus.platform.version>
     <!-- 3.8.3+ == java.lang.NoClassDefFoundError: -->
 
@@ -83,6 +83,13 @@
 <!--      <version>24.1.0</version>-->
 <!--    </dependency>-->
     <!-- 23.1.0+ : scenario not found... -->
+
+    <!-- https://mvnrepository.com/artifact/org.reflections/reflections -->
+    <dependency>
+      <groupId>org.reflections</groupId>
+      <artifactId>reflections</artifactId>
+      <version>0.9.9-RC1</version>
+    </dependency>
 
   </dependencies>
 
