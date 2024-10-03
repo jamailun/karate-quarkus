@@ -15,11 +15,9 @@ public class FooUnitTests {
         String packageName = clazz.getPackageName();
         Reflections reflections = new Reflections(packageName, new ResourcesScanner());
         Set<String> resourceList = reflections.getResources(Pattern.compile(".*\\.feature"));
-        String[] result = new String[resourceList.size()];
-        int i = 0;
-        for(String resource : resourceList) {
-            result[i++] = "classpath:" + resource;
-        }
+        String[] result = resourceList.stream()
+            .map(r -> "classpath:" + r)
+            .toArray(String[]::new);
         System.out.println("Classpaths = " + Arrays.toString(result));
         return result;
     }
