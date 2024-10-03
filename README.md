@@ -14,6 +14,15 @@ Now, with Quarkus `3.14.4` we don't have any error, ... but the Karate tests are
 
 Again, it works well with Quarkus 3.8.2 + Karate 1.4.1, but not after.
 
+# Update 02/10/2024
+
+The `Karate#relativeTo(Class<?>)` was not working.
+
+So I created a custom method using a [Reflections 0.9.9-RC1](https://code.google.com/archive/p/reflections/). Thanks to
+this [Stackoverflow answer](https://stackoverflow.com/questions/3923129/get-a-list-of-resources-from-classpath-directory#answer-34273085).
+
+The bad new is Truffle and Polyglot do not have the same version Karate 1.5.0 dependency. So we have to use an env var : `-Dpolyglotimpl.DisableVersionChecks=true`. 
+
 -----
 
 # Previous issue
