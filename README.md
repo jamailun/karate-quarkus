@@ -6,6 +6,14 @@ The Quarkus PR [#39442](https://github.com/quarkusio/quarkus/pull/39442) exclude
 
 But reimporting it does not seem to work.
 
+# Update 02/12/2024
+
+After upgrading to Quarkus 3.16, Karate broke again.
+
+After further inspection, it has been fixed in this [karate commit](https://github.com/karatelabs/karate/pull/2628/commits/6f104181e802db8ee7fbff844f52f1eee0a49443).
+
+So I've shaded the depedency (because no snapshot of karate 1.5.1 has still been published)à.
+
 # Update 20/09/2024
 
 Karate upgraded to `1.5.0`. With the latest version of Quarkus, the test still do not seem to work.
