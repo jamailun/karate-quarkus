@@ -12,7 +12,7 @@
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
     <!-- 3.8.2- == ok -->
 <!--    <quarkus.platform.version>3.8.2</quarkus.platform.version>-->
-    <quarkus.platform.version>3.14.4</quarkus.platform.version>
+    <quarkus.platform.version>3.16.3</quarkus.platform.version>
     <!-- 3.8.3+ == java.lang.NoClassDefFoundError: -->
 
     <!-- karate -->
@@ -66,6 +66,18 @@
       <artifactId>karate-junit5</artifactId>
       <version>${karate.version}</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>io.github.classgraph</groupId>
+          <artifactId>classgraph</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>io.github.classgraph</groupId>
+      <artifactId>classgraph</artifactId>
+      <scope>test</scope>
+      <version>4.8.179</version>
     </dependency>
 
     <!-- Graal SSK ? -->
